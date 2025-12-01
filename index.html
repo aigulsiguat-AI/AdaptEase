@@ -1,190 +1,263 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AdaptEase – Thrive Abroad with Ease</title>
-  
-    <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            primary: '#10B981',  // Emerald Green
-            accent: '#3B82F6',   // Blue
-            highlight: '#FBBF24', // Amber/Yellow
-          },
-        }
-      }
-    }
-  </script>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AdaptEase – Thrive Abroad with Ease</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-  <style>
-    body { font-family: 'Montserrat', sans-serif; }
-  </style>
+    <style>
+        /* --- Guaranteed Color Definitions --- */
+        :root {
+            --primary: #10B981; /* Emerald Green */
+            --accent: #3B82F6;  /* Blue */
+            --highlight: #FBBF24; /* Amber/Yellow */
+            --bg-light: #f7f7f7;
+            --text-dark: #333;
+        }
+
+        /* --- Base & Utility Styles --- */
+        body { 
+            font-family: 'Montserrat', sans-serif; 
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            margin: 0;
+            padding: 0;
+        }
+        .container { 
+            max-width: 1000px; 
+            margin: 0 auto; 
+            padding: 0 24px; 
+        }
+        .section-padding { padding: 80px 0; }
+        .card { 
+            background-color: white; 
+            padding: 25px; 
+            border-radius: 12px; 
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .text-center { text-align: center; }
+        .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
+        .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px; }
+        
+        /* --- Component Styles --- */
+        /* Hero Section Gradient (Green to Blue) */
+        .hero-section {
+            background-image: linear-gradient(to right, var(--primary), var(--accent), #1E40AF);
+            color: white;
+            padding: 96px 0;
+        }
+        .hero-title { font-size: 2.5em; font-weight: 700; margin-bottom: 16px; }
+        .hero-subtitle { font-size: 1.25em; margin-bottom: 40px; }
+        .hero-button { 
+            background-color: var(--highlight); 
+            color: var(--text-dark);
+            font-weight: 600; 
+            padding: 12px 32px; 
+            border-radius: 8px; 
+            text-decoration: none; 
+            display: inline-block;
+            transition: background-color 0.3s;
+        }
+        .hero-button:hover { background-color: #f59e0b; }
+
+        /* Headings & Text Colors */
+        .h2-style { font-size: 2em; font-weight: 700; color: var(--accent); margin-bottom: 48px; }
+        .h3-primary { color: var(--primary); font-size: 1.25em; font-weight: 600; margin-bottom: 10px; }
+        .h3-accent { color: var(--accent); font-size: 1.25em; font-weight: 600; margin-bottom: 10px; }
+        .h3-highlight { color: var(--highlight); font-size: 1.25em; font-weight: 600; margin-bottom: 10px; }
+        
+        /* Feature Cards */
+        .feature-card { transition: box-shadow 0.3s; }
+        .feature-card:hover { box-shadow: 0 8px 16px rgba(0,0,0,0.2); }
+        .border-primary { border-top: 4px solid var(--primary); }
+        .border-accent { border-top: 4px solid var(--accent); }
+        .border-highlight { border-top: 4px solid var(--highlight); }
+
+        /* Footer */
+        .footer-style { background-color: var(--primary); color: white; text-align: center; padding: 24px 0; }
+        
+        /* Misc */
+        .story-border { border-bottom: 4px solid var(--highlight); }
+        .story-accent-text { color: var(--accent); font-weight: 600; margin-top: 16px; }
+        .contact-button { 
+            background-color: var(--primary); 
+            color: white; 
+            font-weight: 600; 
+            padding: 12px; 
+            border-radius: 8px; 
+            width: 100%;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .contact-button:hover { background-color: var(--accent); }
+
+    </style>
 </head>
-<body class="bg-gray-50 text-gray-800">
+<body>
 
-    <section class="relative bg-gradient-to-r from-primary via-accent to-blue-700 text-white">
-    <div class="max-w-6xl mx-auto px-6 py-24 text-center">
-      <h1 class="text-5xl md:text-6xl font-bold mb-6">AdaptEase: AI-Powered Integration for Global Citizens</h1>
-      <p class="text-lg md:text-xl mb-10 max-w-3xl mx-auto">Seamlessly navigate new countries and support your family with our comprehensive, personalized AI guidance.</p>
-      <a href="#core-features" class="bg-highlight text-gray-900 font-semibold px-8 py-3 rounded-lg shadow-lg hover:bg-yellow-400 transition">Explore Core Features</a>
-    </div>
-  </section>
+    <section class="hero-section">
+        <div class="container text-center">
+            <h1 class="hero-title">AdaptEase: AI-Powered Integration for Global Citizens</h1>
+            <p class="hero-subtitle">Seamlessly navigate new countries and support your family with our comprehensive, personalized AI guidance.</p>
+            <a href="#core-features" class="hero-button">Explore Core Features</a>
+        </div>
+    </section>
 
-    <section class="py-20 bg-white">
-    <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-10 px-6">
-      <div class="rounded-2xl overflow-hidden shadow-xl hover:scale-105 transition">
-        <img src="images/familia-pasandolo-bien-al-atardecer.jpg" alt="Family enjoying sunset">
-      </div>
-      <div class="rounded-2xl overflow-hidden shadow-xl hover:scale-105 transition">
-        <img src="images/expat-working.jpg.jpg" alt="Expat working remotely">
-      </div>
-      <div class="rounded-2xl overflow-hidden shadow-xl hover:scale-105 transition">
-        <img src="images/long-term.jpg" alt="People discussing long-term goals">
-      </div>
-    </div>
-  </section>
+    <section class="section-padding" style="padding-top: 40px; padding-bottom: 40px;">
+        <div class="container grid-3" style="gap: 20px;">
+            <div style="border-radius: 16px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                <img src="images/familia-pasandolo-bien-al-atardecer.jpg" alt="Family enjoying sunset" style="width: 100%; height: auto; display: block;">
+            </div>
+            <div style="border-radius: 16px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                <img src="images/expat-working.jpg.jpg" alt="Expat working remotely" style="width: 100%; height: auto; display: block;">
+            </div>
+            <div style="border-radius: 16px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                <img src="images/long-term.jpg" alt="People discussing long-term goals" style="width: 100%; height: auto; display: block;">
+            </div>
+        </div>
+    </section>
 
-    <section id="core-features" class="py-20 bg-gradient-to-br from-gray-100 to-primary/5">
-    <div class="max-w-6xl mx-auto px-6 text-center">
-      <h2 class="text-4xl font-bold text-accent mb-12">Your Comprehensive Integration Toolkit</h2>
-      <div class="grid md:grid-cols-3 gap-10 text-left">
-        
-                <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition border-t-4 border-highlight">
-          <h3 class="text-xl font-semibold mb-3 text-highlight">🧠 AI Navigator: Instant First Help</h3>
-          <p class="text-gray-700 mb-4">Your 24/7 personal guide for daily and urgent needs in the family and community:</p>
-          <ul class="list-disc ml-5 text-gray-600 space-y-1">
-            <li>**Daily Life:** Where to go for document/visa staff.</li>
-            <li>**Emergencies:** Direct guidance to the nearest 24hr clinic.</li>
-            <li>Community support and local etiquette.</li>
-          </ul>
-        </div>
+    <section id="core-features" class="section-padding" style="background-color: #f0fff0;">
+        <div class="container text-center">
+            <h2 class="h2-style">Your Comprehensive Integration Toolkit</h2>
+            <div class="grid-3" style="text-align: left;">
+                
+                <div class="card feature-card border-highlight">
+                    <h3 class="h3-highlight">🧠 AI Navigator: Instant First Help</h3>
+                    <p style="color: #666; margin-bottom: 15px;">Your 24/7 personal guide for daily and urgent needs in the family and community:</p>
+                    <ul style="list-style-type: disc; margin-left: 20px; color: #555; line-height: 1.4;">
+                        <li>**Daily Life:** Where to go for document/visa staff.</li>
+                        <li>**Emergencies:** Direct guidance to the nearest 24hr clinic.</li>
+                        <li>Community support and local etiquette.</li>
+                    </ul>
+                </div>
 
-                <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition border-t-4 border-accent">
-          <h3 class="text-xl font-semibold mb-3 text-accent">📄 Documents & Administration</h3>
-          <p class="text-gray-700 mb-4">Comprehensive guides for government and professional documents:</p>
-          <ul class="list-disc ml-5 text-gray-600 space-y-1">
-            <li>Visa, residency, and local tax registration processes.</li>
-            <li>Accreditation of existing education documents.</li>
-            <li>Support regardless of race, age, profession, or religion.</li>
-          </ul>
-        </div>
-        
-                <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition border-t-4 border-primary">
-          <h3 class="text-xl font-semibold mb-3 text-primary">🤝 Community & Language Learning</h3>
-          <p class="text-gray-700 mb-4">Build your network and enhance your skills:</p>
-          <ul class="list-disc ml-5 text-gray-600 space-y-1">
-            <li>Resources for local language learning.</li>
-            <li>Connect with trusted mentors and peers.</li>
-            <li>Finding specific religious or ethnic community groups.</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
+                <div class="card feature-card border-accent">
+                    <h3 class="h3-accent">📄 Documents & Administration</h3>
+                    <p style="color: #666; margin-bottom: 15px;">Comprehensive guides for government and professional documents:</p>
+                    <ul style="list-style-type: disc; margin-left: 20px; color: #555; line-height: 1.4;">
+                        <li>Visa, residency, and local tax registration processes.</li>
+                        <li>Accreditation of existing education documents.</li>
+                        <li>Support regardless of race, age, profession, or religion.</li>
+                    </ul>
+                </div>
+                
+                <div class="card feature-card border-primary">
+                    <h3 class="h3-primary">🤝 Community & Language Learning</h3>
+                    <p style="color: #666; margin-bottom: 15px;">Build your network and enhance your skills:</p>
+                    <ul style="list-style-type: disc; margin-left: 20px; color: #555; line-height: 1.4;">
+                        <li>Resources for local language learning.</li>
+                        <li>Connect with trusted mentors and peers.</li>
+                        <li>Finding specific religious or ethnic community groups.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <section id="family-support" class="py-20 bg-white">
-    <div class="max-w-6xl mx-auto px-6 text-center">
-      <h2 class="text-4xl font-bold text-primary mb-12">Tailored Support for Your Dependents</h2>
-      <p class="text-lg max-w-4xl mx-auto mb-10 text-gray-600">We provide targeted guidance for every member of your family, based on age and unique health requirements.</p>
+    <section id="family-support" class="section-padding">
+        <div class="container text-center">
+            <h2 class="h2-style" style="color: var(--primary);">Tailored Support for Your Dependents</h2>
+            <p style="font-size: 1.1em; max-width: 800px; margin: 0 auto 40px auto; color: #666;">We provide targeted guidance for every member of your family, based on age and unique health requirements.</p>
 
-      <div class="grid md:grid-cols-2 gap-10 text-left">
-        
-                <div class="bg-gradient-to-br from-gray-50 to-primary/5 p-8 rounded-2xl shadow border-l-4 border-primary">
-          <h3 class="text-2xl font-semibold mb-3 text-primary">🧒 Kids: Education & Enrollment</h3>
-          <ul class="list-disc ml-5 space-y-2 text-gray-700">
-            <li>**School Sign-up:** Step-by-step for primary and secondary school registration.</li>
-            <li>**Accreditation:** Guidance on validating older kids' existing education documents.</li>
-            <li>Finding local language support and after-school activities.</li>
-          </ul>
-        </div>
+            <div class="grid-2" style="text-align: left;">
+                
+                <div class="card" style="border-left: 5px solid var(--primary);">
+                    <h3 class="h3-primary">🧒 Kids: Education & Enrollment</h3>
+                    <ul style="list-style-type: disc; margin-left: 20px; color: #555; line-height: 1.6;">
+                        <li>**School Sign-up:** Step-by-step for primary and secondary school registration.</li>
+                        <li>**Accreditation:** Guidance on validating older kids' existing education documents.</li>
+                        <li>Finding local language support and after-school activities.</li>
+                    </ul>
+                </div>
 
-                <div class="bg-gradient-to-br from-gray-50 to-accent/5 p-8 rounded-2xl shadow border-l-4 border-accent">
-          <h3 class="text-2xl font-semibold mb-3 text-accent">🩺 Elderly & Special Health Needs</h3>
-          <ul class="list-disc ml-5 space-y-2 text-gray-700">
-            <li>**Geriatric Care:** Accessing state or private assistance for elderly relatives.</li>
-            <li>**Special Health Situations:** Locating specialized medical practitioners and therapeutic services.</li>
-            <li>Navigating health insurance and disability support benefits.</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
+                <div class="card" style="border-left: 5px solid var(--accent);">
+                    <h3 class="h3-accent">🩺 Elderly & Special Health Needs</h3>
+                    <ul style="list-style-type: disc; margin-left: 20px; color: #555; line-height: 1.6;">
+                        <li>**Geriatric Care:** Accessing state or private assistance for elderly relatives.</li>
+                        <li>**Special Health Situations:** Locating specialized medical practitioners and therapeutic services.</li>
+                        <li>Navigating health insurance and disability support benefits.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
 
 
-    <section class="py-20 bg-gray-100">
-    <div class="max-w-6xl mx-auto px-6 text-center">
-      <h2 class="text-4xl font-bold text-accent mb-12">Why Choose AdaptEase?</h2>
-      <div class="grid md:grid-cols-2 gap-10 text-left">
-        <div class="p-4 border-l-4 border-primary">
-          <h3 class="text-xl font-semibold mb-2 text-primary">✔ Tailored for Professionals 40+</h3>
-          <p>We understand the unique challenges faced by mid-career professionals relocating with families.</p>
-        </div>
-        <div class="p-4 border-l-4 border-primary">
-          <h3 class="text-xl font-semibold mb-2 text-primary">✔ Mutual Support Community</h3>
-          <p>Not just a tool — a safe space to connect, share experiences, and support one another.</p>
-        </div>
-        <div class="p-4 border-l-4 border-primary">
-          <h3 class="text-xl font-semibold mb-2 text-primary">✔ Affordable & Accessible</h3>
-          <p>Our platform keeps costs low while maximizing impact for families under financial pressure.</p>
-        </div>
-        <div class="p-4 border-l-4 border-primary">
-          <h3 class="text-xl font-semibold mb-2 text-primary">✔ Skill Development</h3>
-          <p>Learn essential new technologies and professions to restart and grow your career abroad.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+    <section class="section-padding" style="background-color: #f0fff0;">
+        <div class="container text-center">
+            <h2 class="h2-style" style="color: var(--accent);">Why Choose AdaptEase?</h2>
+            <div class="grid-2" style="gap: 20px; text-align: left;">
+                <div style="padding: 15px; border-left: 4px solid var(--primary);">
+                    <h3 class="h3-primary">✔ Tailored for Professionals 40+</h3>
+                    <p style="color: #666;">We understand the unique challenges faced by mid-career professionals relocating with families.</p>
+                </div>
+                <div style="padding: 15px; border-left: 4px solid var(--primary);">
+                    <h3 class="h3-primary">✔ Mutual Support Community</h3>
+                    <p style="color: #666;">Not just a tool — a safe space to connect, share experiences, and support one another.</p>
+                </div>
+                <div style="padding: 15px; border-left: 4px solid var(--primary);">
+                    <h3 class="h3-primary">✔ Affordable & Accessible</h3>
+                    <p style="color: #666;">Our platform keeps costs low while maximizing impact for families under financial pressure.</p>
+                </div>
+                <div style="padding: 15px; border-left: 4px solid var(--primary);">
+                    <h3 class="h3-primary">✔ Skill Development</h3>
+                    <p style="color: #666;">Learn essential new technologies and professions to restart and grow your career abroad.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <section class="py-20 bg-gradient-to-r from-primary/10 to-accent/10">
-    <div class="max-w-6xl mx-auto px-6 text-center">
-      <h2 class="text-4xl font-bold text-accent mb-12">Success Stories from Our Community</h2>
-      <div class="grid md:grid-cols-3 gap-8">
-        <div class="bg-white p-6 rounded-2xl shadow hover:shadow-lg transition border-b-4 border-highlight">
-          <p class="italic">“AdaptEase helped me restart my career abroad at 45. The mentoring was life-changing.”</p>
-          <h4 class="mt-4 font-semibold text-accent">— **Maria, Russia**</h4>
-        </div>
-        <div class="bg-white p-6 rounded-2xl shadow hover:shadow-lg transition border-b-4 border-highlight">
-          <p class="italic">“A true lifeline for my family after relocating. We found guidance, community, and hope.”</p>
-          <h4 class="mt-4 font-semibold text-accent">— **Ahmed, Syria**</h4>
-        </div>
-        <div class="bg-white p-6 rounded-2xl shadow hover:shadow-lg transition border-b-4 border-highlight">
-          <p class="italic">“I built new skills and found meaningful work faster than I imagined. AdaptEase is worth it!”</p>
-          <h4 class="mt-4 font-semibold text-accent">— **Susan, China**</h4>
-        </div>
-      </div>
-    </div>
-  </section>
+    <section class="section-padding" style="background-color: #e6f7ff;">
+        <div class="container text-center">
+            <h2 class="h2-style" style="color: var(--accent);">Success Stories from Our Community</h2>
+            <div class="grid-3">
+                <div class="card story-border" style="text-align: center;">
+                    <p style="font-style: italic; color: #555;">“AdaptEase helped me restart my career abroad at 45. The mentoring was life-changing.”</p>
+                    <h4 class="story-accent-text">— **Maria, Russia**</h4>
+                </div>
+                <div class="card story-border" style="text-align: center;">
+                    <p style="font-style: italic; color: #555;">“A true lifeline for my family after relocating. We found guidance, community, and hope.”</p>
+                    <h4 class="story-accent-text">— **Ahmed, Syria**</h4>
+                </div>
+                <div class="card story-border" style="text-align: center;">
+                    <p style="font-style: italic; color: #555;">“I built new skills and found meaningful work faster than I imagined. AdaptEase is worth it!”</p>
+                    <h4 class="story-accent-text">— **Susan, China**</h4>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <section id="contact" class="py-20 bg-gray-100">
-    <div class="max-w-3xl mx-auto px-6">
-      <h2 class="text-4xl font-bold text-center text-primary mb-8">Get in Touch</h2>
-      <form action="YOUR_ENDPOINT_URL_HERE" method="POST" class="bg-white p-8 rounded-2xl shadow-xl space-y-6">
-        <div>
-          <label for="name" class="block text-sm font-semibold">Full Name</label>
-          <input type="text" id="name" name="name" required class="w-full border border-gray-300 rounded-lg px-4 py-2 mt-1 focus:ring-2 focus:ring-accent">
-        </div>
-        <div>
-          <label for="email" class="block text-sm font-semibold">Email</label>
-          <input type="email" id="email" name="email" required class="w-full border border-gray-300 rounded-lg px-4 py-2 mt-1 focus:ring-2 focus:ring-accent">
-        </div>
-        <div>
-          <label for="message" class="block text-sm font-semibold">Message</label>
-          <textarea id="message" name="message" rows="4" required class="w-full border border-gray-300 rounded-lg px-4 py-2 mt-1 focus:ring-2 focus:ring-accent"></textarea>
-        </div>
-        <button type="submit" class="w-full bg-primary text-white font-semibold py-3 rounded-lg shadow-md hover:bg-accent transition">Send Message</button>
-      </form>
-      <p class="text-center text-sm text-gray-600 mt-6">Or email us directly at <a href="mailto:asiguat2043@gmail.com" class="text-accent hover:underline">asiguat2043@gmail.com</a></p>
-    </div>
-  </section>
+    <section id="contact" class="section-padding" style="padding-top: 40px; padding-bottom: 40px;">
+        <div style="max-width: 600px; margin: 0 auto; padding: 0 24px;">
+            <h2 class="h2-style" style="color: var(--primary); margin-bottom: 30px;">Get in Touch</h2>
+            <form action="YOUR_ENDPOINT_URL_HERE" method="POST" class="card" style="padding: 30px; box-shadow: 0 8px 16px rgba(0,0,0,0.15);">
+                <div style="margin-bottom: 15px;">
+                    <label for="name" style="display: block; font-weight: 600; margin-bottom: 5px;">Full Name</label>
+                    <input type="text" id="name" name="name" required style="width: 100%; border: 1px solid #ccc; border-radius: 6px; padding: 10px; box-sizing: border-box;">
+                </div>
+                <div style="margin-bottom: 15px;">
+                    <label for="email" style="display: block; font-weight: 600; margin-bottom: 5px;">Email</label>
+                    <input type="email" id="email" name="email" required style="width: 100%; border: 1px solid #ccc; border-radius: 6px; padding: 10px; box-sizing: border-box;">
+                </div>
+                <div style="margin-bottom: 25px;">
+                    <label for="message" style="display: block; font-weight: 600; margin-bottom: 5px;">Message</label>
+                    <textarea id="message" name="message" rows="4" required style="width: 100%; border: 1px solid #ccc; border-radius: 6px; padding: 10px; box-sizing: border-box;"></textarea>
+                </div>
+                <button type="submit" class="contact-button">Send Message</button>
+            </form>
+            <p style="text-align: center; font-size: 0.9em; color: #777; margin-top: 20px;">Or email us directly at <a href="mailto:asiguat2043@gmail.com" style="color: var(--accent); text-decoration: none;">asiguat2043@gmail.com</a></p>
+        </div>
+    </section>
 
-    <footer class="bg-primary text-white text-center py-6">
-    <p>© 2025 AdaptEase. All rights reserved.</p>
-  </footer>
+    <footer class="footer-style">
+        <div class="container">
+            <p>© 2025 AdaptEase. All rights reserved.</p>
+        </div>
+    </footer>
 
 </body>
 </html>
