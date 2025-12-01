@@ -4,23 +4,25 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AdaptEase – Thrive Abroad with Ease</title>
+  
+    <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#10B981',  // Emerald Green (Used for main backgrounds/buttons)
+            accent: '#3B82F6',   // Blue (Used for secondary accents/borders)
+            highlight: '#FBBF24', // Amber/Yellow (Used for call-to-action buttons)
+          },
+        }
+      }
+    }
+  </script>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
 
   <style>
     body { font-family: 'Montserrat', sans-serif; }
-    /* Custom Colors: Green (Primary), Blue (Accent), Yellow (Highlight) */
-    :root {
-      --color-primary: #10B981; /* Emerald Green */
-      --color-accent: #3B82F6; /* Blue */
-      --color-highlight: #FBBF24; /* Amber/Yellow */
-    }
-    .bg-primary { background-color: var(--color-primary); }
-    .text-primary { color: var(--color-primary); }
-    .bg-accent { background-color: var(--color-accent); }
-    .text-accent { color: var(--color-accent); }
-    .bg-highlight { background-color: var(--color-highlight); }
-    .text-highlight { color: var(--color-highlight); }
   </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
@@ -100,7 +102,7 @@
       </div>
     </div>
   </section>
-  
+
     <section id="contact" class="py-20 bg-gray-100">
     <div class="max-w-3xl mx-auto px-6">
       <h2 class="text-4xl font-bold text-center text-primary mb-8">Get in Touch</h2>
